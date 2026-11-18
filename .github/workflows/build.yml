@@ -28,17 +28,18 @@ jobs:
         if: github.event_name != 'pull_request'
         run: |
           mkdir -p pdfs
-          python3 - << 'PYEOF'
-          import json, urllib.request
+          python3 - << 'PYEOF' > downloads.tsv
+          import json
           data = json.load(open("data/books.json", encoding="utf-8"))
           for book in data["books"]:
               for vol in book["volumes"]:
-                  name = f'pdfs/{book["slug"]}-{vol["id"]}.pdf'
-                  print("downloading", name, "from", vol["url"])
-                  req = urllib.request.Request(vol["url"], headers={"User-Agent": "Mozilla/5.0"})
-                  with urllib.request.urlopen(req, timeout=900) as r, open(name, "wb") as f:
-                      f.write(r.read())
+                  print(f'pdfs/{book["slug"]}-{vol["id"]}.pdf\t{vol["url"]}')
           PYEOF
+          while IFS=$'\t' read -r name url; do
+            echo "downloading $name"
+            curl -L --fail --retry 8 --retry-delay 30 --retry-all-errors -A "FengshizupuBot/1.0 (https://fengshizupu.com; genealogy archive; contact: 323748@gmail.com)" -o "$name" "$url"
+            sleep 5
+          done < downloads.tsv
       - name: Verify shared UI release
         run: python3 scripts/check_family.py
       - name: Generate site
