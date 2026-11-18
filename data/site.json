@@ -1,0 +1,9 @@
+{
+  "domain": "https://zp3.fengshizupu.com",
+  "downloads": "https://github.com/alititi-jackie/fengshizupu-zp3/releases/download/b-20261117",
+  "pagination": {
+    "page": 3,
+    "total": 3,
+    "previous": "https://zp2.fengshizupu.com/"
+  }
+}

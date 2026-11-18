@@ -1,0 +1,113 @@
+:root{
+  --red:#742f32; --red-dark:#5d2528; --cream:#f7f3ea; --paper:#fffdf7;
+  --ink:#2b2320; --muted:#7a6f66; --line:#e3d9c8; --gold:#b08d3e;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);
+  font-family:"Noto Serif SC","Songti SC","SimSun",serif;line-height:1.75}
+a{color:var(--red);text-decoration:none}
+a:active{opacity:.7}
+.wrap{max-width:1160px;margin:0 auto;padding:0 16px}
+.mainnav{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:1px solid var(--line)}
+.mainnav-in{display:flex;gap:26px;align-items:center;height:48px;overflow-x:auto;scrollbar-width:none}
+.mainnav-in::-webkit-scrollbar{display:none}
+.mainnav a{color:var(--ink);text-decoration:none;white-space:nowrap;padding:4px 1px}
+.mainnav a.on{color:var(--red);font-weight:700;box-shadow:inset 0 -2px 0 var(--red)}
+.mainnav button.share{background:none;border:0;font:inherit;color:var(--red);cursor:pointer;padding:4px 1px;white-space:nowrap}
+@media(max-width:650px){.mainnav-in{gap:19px;height:44px;font-size:15.5px}}
+.hero{padding-top:54px}
+.hero h1{font-family:Georgia,'Songti SC',serif;font-size:min(44px,calc((100vw - 32px) / 10.5));
+  white-space:nowrap;line-height:1.3;margin:12px 0 16px}
+@media(max-width:650px){.hero{padding-top:34px}}
+#searchResults{max-width:1160px;margin:6px auto 0;text-align:left}
+#searchResults a{display:flex;justify-content:space-between;gap:10px;align-items:baseline;
+  background:#fff;border:1px solid var(--line);
+  border-radius:8px;padding:9px 12px;margin-top:6px;color:var(--ink);font-size:15px}
+#searchResults a .pg{color:var(--red);white-space:nowrap;flex-shrink:0}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}
+@media(min-width:640px){.cards{grid-template-columns:1fr 1fr 1fr}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;
+  padding:18px 14px;text-align:center;color:var(--ink)}
+.card .small{font-size:13px;color:var(--muted);margin-top:2px}
+section.block{margin:26px 0}
+section.block h2{font-size:20px;color:var(--red);border-left:4px solid var(--red);
+  padding-left:10px;margin:0 0 10px}
+.btn{display:inline-block;background:var(--red);color:#fff;padding:11px 22px;
+  border-radius:10px;font-size:16px}
+.list a{display:flex;justify-content:space-between;gap:10px;background:var(--paper);
+  border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin-top:8px;color:var(--ink)}
+.list a .pg{color:var(--red);white-space:nowrap}
+footer.site{border-top:1px solid var(--line);margin-top:36px;padding:18px 16px 30px;
+  text-align:center;color:var(--muted);font-size:13px}
+/* reader */
+.readerbar{background:var(--paper);border-bottom:1px solid var(--line);
+  max-width:1160px;margin:0 auto;padding:8px 12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.readerbar .info{font-size:14px;color:var(--ink)}
+.readerbar .info b{color:var(--red)}
+.readerbar input{width:76px;padding:7px 8px;font-size:15px;line-height:1.25;border:1px solid var(--line);
+  border-radius:8px;font-family:inherit}
+.readerbar button,.readerbar a.nav{padding:7px 13px;font-size:15px;line-height:1.25;border-radius:8px;
+  border:1px solid var(--red);background:#fff;color:var(--red);cursor:pointer;font-family:inherit}
+#jumpToggle{display:none}
+.readerbar a.nav.primary,.readerbar button.primary{background:var(--red);color:#fff}
+.pageimg{display:block;width:100%;height:auto;background:#fff}
+.readerwrap{max-width:1160px;margin:0 auto}
+.pagenav{display:flex;justify-content:space-between;gap:10px;padding:14px 12px 26px}
+.pagenav a{flex:1;text-align:center;background:var(--red);color:#fff;padding:12px;
+  border-radius:10px;font-size:16px}
+.pagenav a.off{background:#d8cfc0;color:#8a7f72;pointer-events:none}
+.note{font-size:13.5px;color:var(--muted)}
+.kv{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.kv div{margin:3px 0}
+.kv .k{color:var(--muted);font-size:13px;margin-right:8px}
+/* floating buttons, toc & villages fixes, footer main-site link (2026-11-14) */
+footer.site a{color:var(--red);text-decoration:none;white-space:nowrap}
+.fab{position:fixed;right:14px;bottom:20px;display:flex;flex-direction:column;gap:10px;z-index:60}
+.fab button{width:44px;height:44px;border-radius:50%;border:1px solid #d8cfc0;
+  background:rgba(255,255,255,.94);color:var(--red);font-size:19px;line-height:1;
+  box-shadow:0 2px 8px rgba(60,40,20,.18);cursor:pointer;font-family:inherit}
+#fabTop{display:none}
+#fabTop.on{display:block}
+/* dual-mode reader: single page / continuous scroll (2026-11-14) */
+.pageimg{aspect-ratio:1397/1984}
+.modes{display:inline-flex;border:1px solid var(--red);border-radius:8px;overflow:hidden;flex-shrink:0}
+.modes button{padding:7px 11px;font-size:15px;border:0;background:#fff;color:var(--red);
+  cursor:pointer;font-family:inherit;line-height:1.25}
+.modes button.on{background:var(--red);color:#fff}
+#scrollView .spage{margin-bottom:16px}
+#scrollView .scap{font-size:13.5px;color:var(--muted);padding:2px 2px 6px}
+#scrollView .scap b{color:var(--red)}
+body.scrollmode .readerbar{position:sticky;top:48px;z-index:40;box-shadow:0 2px 8px rgba(60,40,20,.08)}
+@media(max-width:650px){body.scrollmode .readerbar{top:44px}
+  #branchInfo,.full-only{display:none}
+  #jumpToggle{display:block}
+  .readerbar label.jumpctl,#jumpBtn{display:none}
+  body.jumpon .readerbar label.jumpctl{display:flex;align-items:center;gap:6px}
+  body.jumpon #jumpBtn{display:block}}
+
+.crumb{margin:16px 0;color:#665c54}
+.reader-image{display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in}
+.image-dialog{width:96vw;max-width:1600px;height:92dvh;max-height:92dvh;padding:0;border:1px solid #ded6c6;border-radius:10px;background:#f7f4ec;color:#302f29}
+.image-dialog::backdrop{background:rgba(0,0,0,.8)}
+.image-toolbar{display:flex;align-items:center;gap:12px;padding:10px;height:64px;box-sizing:border-box}
+.image-toolbar span{margin-right:auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.image-toolbar button{padding:8px 12px;white-space:nowrap;cursor:pointer}
+.image-viewport{height:calc(100% - 64px);overflow:auto;overscroll-behavior:contain}
+.image-viewport img{display:block;max-width:100%;max-height:100%;height:auto;width:auto;margin:auto}
+.image-viewport img.zoomed{max-width:none;max-height:none;width:1509px;height:auto;margin:0 auto}
+
+.reader-spacer{flex:1}
+#sheets{scroll-margin-top:60px}
+@media(max-width:650px){
+  }
+
+/* --- 阅读页顶部：本册 PDF 下载 --- */
+.dlrow{max-width:1160px;margin:0 auto;text-align:left;padding:8px 12px 0}
+.dlrow a{color:var(--red);text-decoration:none;font-size:14px}
+.dlrow a:hover{text-decoration:underline}
+/* 与主站一致的分享按钮（自主站样式原样搬入：去按钮底色与边框，只留文字） */
+.share-wrap{display:inline-flex;position:relative}
+nav .share-text{font:inherit;color:#742f32;cursor:pointer;background:0 0;border:none;padding:0}
+/* 分享成功提示条（与主站同款式） */
+.share-toast{color:#fff;white-space:nowrap;z-index:20;background:#302f29;border-radius:6px;padding:4px 10px;font-size:13px;position:absolute;top:calc(100% + 8px);right:0;display:none}

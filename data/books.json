@@ -1,0 +1,31 @@
+{
+ "books": [
+  {
+   "slug": "changsha-feng-jiayin",
+   "title": "湖南长沙冯氏续修甲寅谱",
+   "province": "湖南",
+   "place": "长沙",
+   "era": "民国三年（1914）修",
+   "editors": "冯忠璘主修",
+   "source": "上海图书馆藏本 · 维基共享资源（公有领域）",
+   "keywords": "湖南 长沙 冯氏 续修甲寅谱 甲寅谱 民国 1914 四山堂 三十卷 冯忠璘 冯中 丰城 江西丰城 始迁祖",
+   "intro": "湖南长沙冯氏续修甲寅谱，三十卷，民国三年（1914）甲寅续修，冯忠璘主修，四山堂木活字本：谱首一卷、世系源一卷、世系纪二十五卷，祠记、墓记、谱末各一卷。其族始迁祖冯中原籍江西丰城，元明之际迁居长沙。本站收录上海图书馆藏本影印，按扫描分两册，逐页在线连读。",
+   "volumes": [
+    {
+     "id": "vol1",
+     "name": "第一册",
+     "pages": 1360,
+     "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Shanghai_%E9%95%B7%E6%B2%99%E9%A6%AE%E6%B0%8F%E7%BA%8C%E4%BF%AE%E7%94%B2%E5%AF%85%E8%AD%9C_part_1.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "dl_mb": 184.3
+    },
+    {
+     "id": "vol2",
+     "name": "第二册",
+     "pages": 677,
+     "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Shanghai_%E9%95%B7%E6%B2%99%E9%A6%AE%E6%B0%8F%E7%BA%8C%E4%BF%AE%E7%94%B2%E5%AF%85%E8%AD%9C_part_2.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "dl_mb": 97.4
+    }
+   ]
+  }
+ ]
+}

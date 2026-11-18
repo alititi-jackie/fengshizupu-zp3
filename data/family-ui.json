@@ -1,0 +1,12 @@
+{
+  "source": "alititi-jackie/fengshizupu-site",
+  "revision": "79ee0b449644ee80586eed748c4a63076c6ed86a",
+  "files": {
+    "assets/genealogy-theme.css": "0fbe9c2db5fe756769d1da1d7b0769df2e9f6a2d1b41fda94139ceb9339f3ae7",
+    "assets/site.js": "bcff67f55cae058617173fe0640e70f7706bd619404d11ba43438d788e39df01",
+    "assets/reader-controls.js": "2b46f906ab117a7200d7ac2fe119aa2f0215d89448463fa91d89d78da512b76d",
+    "scripts/family_ui.py": "2fe2486b9e079bfc5c31b9761c459ad06d88e1ad5670398623d6ed88814a90aa",
+    "scripts/collection_site.py": "4f778cbe96dcd3323915e6576d7e8b11c8dc66b7fa7dd63f530284fad25aa6e6",
+    "tests/browser.cjs": "623073b35f8f14de7a183df96d8a2ea966fb0319e9880eedb530fac1d4b8595b"
+  }
+}
