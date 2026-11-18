@@ -16,14 +16,75 @@
      "name": "第一册",
      "pages": 1360,
      "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Shanghai_%E9%95%B7%E6%B2%99%E9%A6%AE%E6%B0%8F%E7%BA%8C%E4%BF%AE%E7%94%B2%E5%AF%85%E8%AD%9C_part_1.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-     "dl_mb": 184.3
+     "dl_mb": 193.3
     },
     {
      "id": "vol2",
      "name": "第二册",
      "pages": 677,
      "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Shanghai_%E9%95%B7%E6%B2%99%E9%A6%AE%E6%B0%8F%E7%BA%8C%E4%BF%AE%E7%94%B2%E5%AF%85%E8%AD%9C_part_2.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
-     "dl_mb": 97.4
+     "dl_mb": 102.2
+    }
+   ]
+  },
+  {
+   "slug": "piling-feng-shixiu",
+   "title": "江苏毗陵冯氏宗谱",
+   "province": "江苏",
+   "place": "毗陵（常州）",
+   "era": "民国十六年（1927）十修",
+   "editors": "纂修者不详",
+   "source": "上海图书馆藏本 · 维基共享资源（公有领域）",
+   "keywords": "江苏 常州 毗陵 武进 冯氏宗谱 十修 民国 1927 四经堂",
+   "intro": "江苏毗陵冯氏宗谱，民国十六年（1927）十修，四经堂刊本；其族自南宋迁常州（古称毗陵），聚族于此近七百年，前后十次修谱。本站收录上海图书馆藏本影印，按扫描分两册，逐页在线连读。",
+   "volumes": [
+    {
+     "id": "vol1",
+     "name": "第一册",
+     "pages": 1775,
+     "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Shanghai_%E6%AF%97%E9%99%B5%E9%A6%AE%E6%B0%8F%E5%AE%97%E8%AD%9C_version_1_part_1.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "dl_mb": 165.3
+    },
+    {
+     "id": "vol2",
+     "name": "第二册",
+     "pages": 1670,
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Shanghai_%E6%AF%97%E9%99%B5%E9%A6%AE%E6%B0%8F%E5%AE%97%E8%AD%9C_version_1_part_2.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "dl_mb": 127.1
+    }
+   ]
+  },
+  {
+   "slug": "zheshan-feng",
+   "title": "浙江海宁赭山冯氏家谱",
+   "province": "浙江",
+   "place": "海宁赭山",
+   "era": "清宣统元年（1909）重修",
+   "editors": "高其锦、俞廉法纂修",
+   "source": "上海图书馆藏本 · 维基共享资源（公有领域）",
+   "keywords": "浙江 海宁 赭山 冯氏家谱 宣统 1909 树德堂 二十二卷 高其锦 俞廉法 冯柏四 冯柏七 硖石",
+   "intro": "浙江海宁赭山冯氏家谱，二十二卷，清宣统元年（1909）重修，高其锦、俞廉法纂修，树德堂木活字本；其族始迁祖为明代冯柏四、冯柏七。本站收录上海图书馆藏本影印，按扫描分三册，逐页在线连读。",
+   "volumes": [
+    {
+     "id": "vol1",
+     "name": "第一册",
+     "pages": 1501,
+     "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Shanghai_%E8%B5%AD%E5%B1%B1%E9%A6%AE%E6%B0%8F%E5%AE%B6%E8%AD%9C_version_1_part_1.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "dl_mb": 151.4
+    },
+    {
+     "id": "vol2",
+     "name": "第二册",
+     "pages": 1501,
+     "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Shanghai_%E8%B5%AD%E5%B1%B1%E9%A6%AE%E6%B0%8F%E5%AE%B6%E8%AD%9C_version_1_part_2.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "dl_mb": 181.6
+    },
+    {
+     "id": "vol3",
+     "name": "第三册",
+     "pages": 725,
+     "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Shanghai_%E8%B5%AD%E5%B1%B1%E9%A6%AE%E6%B0%8F%E5%AE%B6%E8%AD%9C_version_1_part_3.pdf?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+     "dl_mb": 86.5
     }
    ]
   }
