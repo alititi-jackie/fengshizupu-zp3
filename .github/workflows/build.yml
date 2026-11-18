@@ -1,0 +1,78 @@
+name: build
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: pages-${{ github.ref }}-${{ github.sha }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install tools
+        if: github.event_name != 'pull_request'
+        run: |
+          pip install --quiet pymupdf pillow
+          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk > /dev/null
+      - name: Download source PDFs
+        if: github.event_name != 'pull_request'
+        run: |
+          mkdir -p pdfs
+          python3 - << 'PYEOF'
+          import json, urllib.request
+          data = json.load(open("data/books.json", encoding="utf-8"))
+          for book in data["books"]:
+              for vol in book["volumes"]:
+                  name = f'pdfs/{book["slug"]}-{vol["id"]}.pdf'
+                  print("downloading", name, "from", vol["url"])
+                  req = urllib.request.Request(vol["url"], headers={"User-Agent": "Mozilla/5.0"})
+                  with urllib.request.urlopen(req, timeout=900) as r, open(name, "wb") as f:
+                      f.write(r.read())
+          PYEOF
+      - name: Verify shared UI release
+        run: python3 scripts/check_family.py
+      - name: Generate site
+        run: python3 scripts/generate.py
+      - name: Render page images
+        if: github.event_name != 'pull_request'
+        run: python3 scripts/render_pages.py --books data/books.json --pdf-dir pdfs --out site
+      - name: Build download PDFs and upload to release
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 scripts/make_download_pdfs.py --books data/books.json --pdf-dir pdfs --out dl-out
+          gh release view b-20261117 >/dev/null 2>&1 || gh release create b-20261117 --title b-20261117
+          gh release upload b-20261117 dl-out/*.pdf --clobber
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Verify mobile and desktop UI
+        env:
+          FAMILY_UI_REMOTE_SCANS: ${{ github.event_name == 'pull_request' && '1' || '0' }}
+        run: |
+          npm install --prefix work/browser --no-package-lock playwright@1.58.2
+          work/browser/node_modules/.bin/playwright install chromium --with-deps
+          python3 -m http.server 4173 --bind 127.0.0.1 --directory site &
+          DEBUG=pw:api NODE_PATH="$PWD/work/browser/node_modules" timeout 120s node tests/browser.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: family-ui-screenshots
+          path: site-*.png
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+        with:
+          path: site
+      - uses: actions/deploy-pages@v4
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
